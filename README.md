@@ -1,23 +1,102 @@
+# 🔍 SimpSearch
 
-# 🧾 Before You Start
+> Lightweight Java/Kotlin library for web search + clean text extraction using W3C html2txt.
 
-### 1. Add Dependency
+[![](https://jitpack.io/v/simpsearch/simpsearch-java.svg)](https://jitpack.io/#simpsearch/simpsearch-java)
 
-#### Gradle
+---
+
+# 🚀 Features
+
+* 🔎 Web search using Brave
+* 🌐 Website text extraction
+* 📄 Raw search output
+* ✂️ Clean text (no links)
+* 🔗 Link extraction
+* 📊 Structured parsed results (title, link, snippet)
+* 📑 Pagination support
+* ☕ Works in Java & Kotlin
+* ⚡ Lightweight (no heavy dependencies)
+
+---
+
+# 📦 Installation
+
+## Gradle
 
 ```gradle
-implementation "com.simpsearch:simpsearch:1.0.0"
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.simpsearch:simpsearch-java:1.0.0'
+}
 ```
 
-#### Maven
+---
+
+## Maven
 
 ```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+
 <dependency>
-  <groupId>com.simpsearch</groupId>
-  <artifactId>simpsearch</artifactId>
+  <groupId>com.github.simpsearch</groupId>
+  <artifactId>simpsearch-java</artifactId>
   <version>1.0.0</version>
 </dependency>
 ```
+
+---
+
+# ⚡ Quick Start
+
+## Java
+
+```java
+import com.simpsearch.SimpSearch;
+
+public class Main {
+    public static void main(String[] args) {
+
+        SimpSearch client = new SimpSearch();
+
+        System.out.println(client.parsed("hello world"));
+    }
+}
+```
+
+---
+
+## Kotlin
+
+```kotlin
+import com.simpsearch.SimpSearch
+
+fun main() {
+    val client = SimpSearch()
+    println(client.parsed("hello world"))
+}
+```
+
+---
+
+# 🧠 How It Works (Beginner Friendly)
+
+1. Your query goes to **Brave Search**
+2. Search page is sent to **W3C html2txt**
+3. HTML is converted into clean readable text
+4. SimpSearch extracts:
+
+   * Titles
+   * Links
+   * Snippets
 
 ---
 
@@ -262,7 +341,7 @@ public class Example10 {
 
 ---
 
-# 💡 Bonus: Kotlin Full Working Example
+# 💡 Bonus: Kotlin Full Example
 
 ```kotlin
 import com.simpsearch.SimpSearch
@@ -284,11 +363,55 @@ fun main() {
 
 ---
 
-# 🧠 Pro Tip for Beginners
+# 🧩 API Summary
 
-If you're new:
+| Method        | Description                |
+| ------------- | -------------------------- |
+| raw(query)    | Full raw text              |
+| text(query)   | Clean text (links removed) |
+| links(query)  | Extract only links         |
+| parsed(query) | Structured results         |
+| extract(url)  | Website text extraction    |
 
-👉 Run examples one by one
-👉 Start with Example1
-👉 Then try Example5 (real website extraction)
+---
 
+# ⚠️ Notes
+
+* Internet connection required
+* Uses Brave Search + W3C html2txt
+* Avoid too many rapid requests (rate limits may apply)
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repo
+2. Create a new branch
+3. Make changes
+4. Submit a pull request
+
+---
+
+# 📄 License
+
+MIT License
+
+---
+
+# ❤️ Final Note
+
+SimpSearch is designed to be **simple, fast, and beginner-friendly**.
+
+If you're learning:
+
+* Web scraping
+* Java networking
+* Text processing
+
+👉 This library is a great starting point.
+
+---
+
+Happy coding 🚀
