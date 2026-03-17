@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.simpsearch'
+group = 'com.github.simpsearch'   // ✅ FIXED
 version = '1.0.0'
 
 java {
